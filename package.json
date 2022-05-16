@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "back": "cd Backend &&  npm run dev",
     "front": "cd Frontend && npm run dev",
-    "deploy-heroku": "cd Backend && npm run serve" 
+    "deploy-heroku": "cd Backend && node index.js" 
   },
   "repository": {
     "type": "git",

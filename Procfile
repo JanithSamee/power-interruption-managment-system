@@ -1,1 +1,1 @@
-web: npm run deploy-heroku
+web: cd Backend && node index.js
