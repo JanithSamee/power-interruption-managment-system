@@ -3,6 +3,8 @@ const express = require("express")
 const cors =require("cors")
 const bodyParser =require("body-parser")
 
+const router =require("./src/routes/_index.routes")
+
 const type =process.env.TYPE || "DEV"
 const PORT = process.env.PORT || 5000
 const urlAllowed = process.env.URLALLOWED && process.env.URLALLOWED.split(",")
@@ -19,8 +21,6 @@ app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.get("/",(req,res)=>{
-    res.send("Hello World")
-})
+app.use(router)
 
 app.listen(PORT,()=>console.log(`The Server Run On port : ${PORT} at ${type}.`))
