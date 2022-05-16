@@ -1,0 +1,25 @@
+{
+  "name": "power-interruption-managment-system",
+  "version": "1.0.0",
+  "description": "* C++ ATtiny\r * React with Vite , Mongo DB ,Node with Express, Google maps\r * Git and Github",
+  "main": "README.md",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "back": "cd Backend &&  npm run dev",
+    "front": "cd Frontend && npm run dev",
+    "deploy-heroku": "cd Backend && npm run serve" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JanithSamee/power-interruption-managment-system.git"
+  },
+  "author": "Janith Samee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JanithSamee/power-interruption-managment-system/issues"
+  },
+  "homepage": "https://github.com/JanithSamee/power-interruption-managment-system#readme"
+}

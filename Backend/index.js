@@ -10,7 +10,6 @@ const urlAllowed = process.env.URLALLOWED && process.env.URLALLOWED.split(",")
 const app = express()
 
 if (type==="PROD") {
-    
     app.use(cors({origin:urlAllowed}))
 } else {
     
@@ -19,5 +18,9 @@ if (type==="PROD") {
 app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded({extended:true}))
+
+app.get("/",(req,res)=>{
+    res.send("Hello World")
+})
 
 app.listen(PORT,()=>console.log(`The Server Run On port : ${PORT} at ${type}.`))
