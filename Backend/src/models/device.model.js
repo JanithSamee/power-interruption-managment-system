@@ -8,8 +8,13 @@ const deviceSechema =new Schema({
     },
     region:String,
     // Officer
-    lastBreakdown:{type:Date,default:Date.now},
-    verified:{type:Boolean,default:false},
+    lastBreakdown:{type:Date},
+    isunderBreakdown:{type:Boolean,default:false},
+    isActive:{type:Boolean,default:false},
+    highConsumtions:{
+        recordedTime:{type:Date},
+        count:{type:Number,default:0}
+    }
 },{timestamps:true})
 
 const Device = model("Device",deviceSechema)
