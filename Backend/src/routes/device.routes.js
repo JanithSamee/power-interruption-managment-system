@@ -1,3 +1,10 @@
+/**
+ * The unit that notified the breadowns and high consumtions. 
+*/
+
+// TODO: register a device with given device list
+
+
 const { Router } = require("express");
 
 const {
