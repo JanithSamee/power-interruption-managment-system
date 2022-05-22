@@ -44,7 +44,8 @@ const signIn= async (req,res)=>{
 
 const getOfficer = async(req,res) => {
     try {
-        res.cookie("test","123",{httpOnly: true,expires: new Date(Date.now() + 48 * 3600000)}). send("Offifer")
+        console.log(req.user)
+        res.send(req.user)
     } catch (error) {
         console.log(error)
     }

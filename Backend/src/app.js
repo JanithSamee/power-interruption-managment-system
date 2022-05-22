@@ -2,6 +2,7 @@ require("./db/mongoose")
 const express = require("express")
 const cors =require("cors")
 const bodyParser =require("body-parser")
+var cookieParser = require('cookie-parser')
 
 const router =require("./routes/_index.routes")
 
@@ -17,6 +18,7 @@ if (type==="PROD") {
     
 }
 
+app.use(cookieParser())
 app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded({extended:true}))
