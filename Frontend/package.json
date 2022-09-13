@@ -2,15 +2,24 @@
   "name": "power-interrruption-manager",
   "private": true,
   "version": "1.0.0",
-  "author": {"name": "Janith Samee","email": "janith.samee0@gmail.com"},
+  "author": {
+    "name": "Janith Samee",
+    "email": "janith.samee0@gmail.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/core": "^4.2.7",
+    "@mantine/hooks": "^4.2.7",
+    "@tabler/icons": "^1.95.1",
+    "axios": "^0.27.2",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
+    "tabler-icons-react": "^1.48.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
