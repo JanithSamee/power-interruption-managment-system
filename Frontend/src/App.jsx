@@ -1,6 +1,7 @@
 import { AppShell } from "@mantine/core";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
+import AutherenticationPage from "./pages/AutherenticationPage";
 import HomePage from "./pages/HomePage";
 
 export default function App() {
@@ -20,6 +21,10 @@ export default function App() {
         >
             <Routes>
                 <Route path="/" element={<HomePage></HomePage>}></Route>
+                <Route
+                    path="/auth/signin"
+                    element={<AutherenticationPage />}
+                ></Route>
             </Routes>
         </AppShell>
     );

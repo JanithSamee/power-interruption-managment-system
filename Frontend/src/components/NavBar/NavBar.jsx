@@ -8,18 +8,18 @@ import {
     Stack,
 } from "@mantine/core";
 import {
-    TablerIcon,
-    IconHome2,
-    IconGauge,
-    IconDeviceDesktopAnalytics,
-    IconFingerprint,
-    IconCalendarStats,
-    IconUser,
-    IconSettings,
-    IconLogout,
-    IconSwitchHorizontal,
-} from "@tabler/icons";
-import { MantineLogo } from "@mantine/ds";
+    Home2,
+    Gauge,
+    DeviceDesktopAnalytics,
+    Fingerprint,
+    CalendarStats,
+    User,
+    Settings,
+    Logout,
+    SwitchHorizontal,
+} from "tabler-icons-react";
+import { NavLink } from "react-router-dom";
+import Logo from "../../assets/main_logo.svg";
 
 const useStyles = createStyles((theme) => ({
     link: {
@@ -29,57 +29,57 @@ const useStyles = createStyles((theme) => ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        color: theme.white,
-        opacity: 0.85,
+        color:
+            theme.colorScheme === "dark"
+                ? theme.colors.dark[0]
+                : theme.colors.gray[7],
 
         "&:hover": {
-            opacity: 1,
-            backgroundColor: theme.fn.lighten(
-                theme.fn.variant({
-                    variant: "filled",
-                    color: theme.primaryColor,
-                }).background,
-                0.1
-            ),
+            backgroundColor:
+                theme.colorScheme === "dark"
+                    ? theme.colors.dark[5]
+                    : theme.colors.gray[0],
         },
     },
 
     active: {
-        opacity: 1,
         "&, &:hover": {
-            backgroundColor: theme.fn.lighten(
-                theme.fn.variant({
-                    variant: "filled",
-                    color: theme.primaryColor,
-                }).background,
-                0.15
-            ),
+            backgroundColor: theme.fn.variant({
+                variant: "light",
+                color: theme.primaryColor,
+            }).background,
+            color: theme.fn.variant({
+                variant: "light",
+                color: theme.primaryColor,
+            }).color,
         },
     },
 }));
 
-function NavbarLink({ icon: Icon, label, active, onClick }) {
+function NavbarLink({ Icon, label, active, onClick, link }) {
     const { classes, cx } = useStyles();
     return (
-        <Tooltip label={label} position="right" transitionDuration={0}>
-            <UnstyledButton
-                onClick={onClick}
-                className={cx(classes.link, { [classes.active]: active })}
-            >
-                <Icon stroke={1.5} />
-            </UnstyledButton>
-        </Tooltip>
+        <NavLink to={link || "/"}>
+            <Tooltip label={label} position="right" transitionDuration={0}>
+                <UnstyledButton
+                    onClick={onClick}
+                    className={cx(classes.link, { [classes.active]: active })}
+                >
+                    <Icon />
+                </UnstyledButton>
+            </Tooltip>
+        </NavLink>
     );
 }
 
 const mockdata = [
-    { icon: IconHome2, label: "Home" },
-    { icon: IconGauge, label: "Dashboard" },
-    { icon: IconDeviceDesktopAnalytics, label: "Analytics" },
-    { icon: IconCalendarStats, label: "Releases" },
-    { icon: IconUser, label: "Account" },
-    { icon: IconFingerprint, label: "Security" },
-    { icon: IconSettings, label: "Settings" },
+    { icon: Home2, label: "Home", link: "/" },
+    { icon: Gauge, label: "Dashboard", link: "/dashboard" },
+    { icon: DeviceDesktopAnalytics, label: "Analytics" },
+    { icon: CalendarStats, label: "Releases" },
+    { icon: User, label: "Account", link: "/account" },
+    { icon: Fingerprint, label: "Security" },
+    { icon: Settings, label: "Settings" },
 ];
 
 export default function NavBar() {
@@ -87,27 +87,18 @@ export default function NavBar() {
 
     const links = mockdata.map((link, index) => (
         <NavbarLink
-            {...link}
+            Icon={link.icon}
             key={link.label}
             active={index === active}
             onClick={() => setActive(index)}
+            link={link.link}
         />
     ));
 
     return (
-        <Navbar
-            height={750}
-            width={{ base: 80 }}
-            p="md"
-            sx={(theme) => ({
-                backgroundColor: theme.fn.variant({
-                    variant: "filled",
-                    color: theme.primaryColor,
-                }).background,
-            })}
-        >
+        <Navbar height={750} width={{ base: 80 }} p="md">
             <Center>
-                <MantineLogo type="mark" inverted size={30} />
+                <img src={Logo} alt="Power Intteruption management"></img>
             </Center>
             <Navbar.Section grow mt={50}>
                 <Stack justify="center" spacing={0}>
@@ -117,10 +108,10 @@ export default function NavBar() {
             <Navbar.Section>
                 <Stack justify="center" spacing={0}>
                     <NavbarLink
-                        icon={IconSwitchHorizontal}
+                        Icon={SwitchHorizontal}
                         label="Change account"
                     />
-                    <NavbarLink icon={IconLogout} label="Logout" />
+                    <NavbarLink Icon={Logout} label="Logout" />
                 </Stack>
             </Navbar.Section>
         </Navbar>

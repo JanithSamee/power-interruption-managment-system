@@ -12,6 +12,7 @@ const useStyles = createStyles((theme) => ({
         paddingBottom: theme.spacing.xl * 3,
         width: "100%",
         color: "#fff",
+        height: "100vh",
     },
 }));
 
