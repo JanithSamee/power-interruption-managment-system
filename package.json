@@ -1,32 +1,32 @@
 {
-  "name": "power-interruption-managment-system",
-  "version": "1.0.0",
-  "description": "* C++ ATtiny\r * React with Vite , Mongo DB ,Node with Express, Google maps\r * Git and Github",
-  "main": "README.md",
-  "engines": {
-    "node": "16.x"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "back": "cd Backend &&  npm run dev",
-    "front": "cd Frontend && npm run dev",
-    "front-build": "cd Frontend && npm run build",
-    "deploy-heroku": "git push heroku main",
-    "deploy-netlify": "export $(cat .env | xargs)  && npm run build && netlify deploy --dir=Frontend/dist --prod",
-    "deploy": "npm run deploy-heroku && npm run deploy-netlify"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JanithSamee/power-interruption-managment-system.git"
-  },
-  "author": "Janith Samee",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JanithSamee/power-interruption-managment-system/issues"
-  },
-  "homepage": "https://github.com/JanithSamee/power-interruption-managment-system#readme",
-  "dependencies": {
-    "socket.io": "^4.5.2",
-    "socket.io-client": "^4.5.2"
-  }
+    "name": "power-interruption-managment-system",
+    "version": "1.0.0",
+    "description": "* C++ ATtiny\r * React with Vite , Mongo DB ,Node with Express, Google maps\r * Git and Github",
+    "main": "README.md",
+    "engines": {
+        "node": "16.x"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "back": "cd Backend &&  npm run dev",
+        "front": "cd Frontend && npm run dev",
+        "front-build": "cd Frontend && npm run build",
+        "deploy-heroku": "git push heroku main",
+        "deploy-netlify": "export $(cat .env | xargs)  && npm run front-build && netlify deploy --dir=Frontend/dist --prod",
+        "deploy": "npm run deploy-heroku && npm run deploy-netlify"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JanithSamee/power-interruption-managment-system.git"
+    },
+    "author": "Janith Samee",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/JanithSamee/power-interruption-managment-system/issues"
+    },
+    "homepage": "https://github.com/JanithSamee/power-interruption-managment-system#readme",
+    "dependencies": {
+        "socket.io": "^4.5.2",
+        "socket.io-client": "^4.5.2"
+    }
 }
