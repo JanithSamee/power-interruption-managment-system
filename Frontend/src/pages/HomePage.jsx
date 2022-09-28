@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { createStyles, Container, Title, Text, Button } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
@@ -17,6 +18,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function HomePage() {
+    const navigate = useNavigate();
     const { classes } = useStyles();
     return (
         <div className={classes.root}>
@@ -24,33 +26,35 @@ export default function HomePage() {
                 <div className={classes.inner}>
                     <div className={classes.content}>
                         <Title className={classes.title}>
-                            A{" "}
+                            Power{" "}
                             <Text
                                 component="span"
                                 inherit
                                 variant="gradient"
                                 gradient={{ from: "pink", to: "yellow" }}
                             >
-                                fully featured
+                                Interuption
                             </Text>{" "}
-                            React components library
+                            Managment System
                         </Title>
 
                         <Text className={classes.description} mt={30}>
-                            Build fully functional accessible web applications
-                            with ease – Mantine includes more than 100
-                            customizable components and hooks to cover you in
-                            any situation
+                            Power breakdown notification and high consumption
+                            notifire for Distribution line. Individual Project
+                            Semester 4
                         </Text>
 
                         <Button
                             variant="gradient"
                             gradient={{ from: "pink", to: "yellow" }}
                             size="xl"
+                            onClick={() => {
+                                navigate("/auth/signin");
+                            }}
                             className={classes.control}
                             mt={40}
                         >
-                            Get started
+                            Login
                         </Button>
                     </div>
                 </div>
